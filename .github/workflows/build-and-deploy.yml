@@ -30,7 +30,7 @@ jobs:
         run: npx cdk bootstrap
         working-directory: infrastructure
       - name: Deploy Backend
-        run: npx cdk deploy web-backend --require-approval
+        run: npx cdk deploy web-backend --require-approval never
         working-directory: infrastructure
       - name: Configure API URL
         run: node get-api-url-ci.js -prod
@@ -42,5 +42,5 @@ jobs:
         run: npm run build
         working-directory: web-ng
       - name: Deploy Frontend
-        run: npx cdk deploy web-frontend --require-approval
+        run: npx cdk deploy web-frontend --require-approval never
         working-directory: infrastructure
